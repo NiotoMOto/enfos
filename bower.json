@@ -1,0 +1,22 @@
+{
+  "name": "enfos",
+  "description": "",
+  "main": "",
+  "authors": [
+    "antoine.guillemoto@gmail.com"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "es6",
+    "globals",
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
