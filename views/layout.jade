@@ -2,6 +2,17 @@ doctype html
 html
   head
     title= title
+    
+    link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+    // bower:css
+    link(rel='stylesheet', href='../bower_components/material-design-lite/material.min.css')
+    // endbower
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     block content
+    
+    // bower:js
+    script(src='../bower_components/material-design-lite/material.min.js')
+    // endbower
+    script(src="/javascripts/polyfills.js")
+    block script
