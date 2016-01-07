@@ -5,6 +5,8 @@ const $ = require('gulp-load-plugins')({lazy: true});
 $.wiredep = require('wiredep').stream;
 $.source = require('vinyl-source-stream');
 $.buffer = require('vinyl-buffer');
+const tsify = require('tsify');
+const babelify = require('babelify');
 
 function swallowError () {
   var args = Array.prototype.slice.call(arguments);
@@ -17,8 +19,7 @@ function swallowError () {
 }
 
 const javascriptsFiles = [
-  'client/javascripts/index.js',
-  'client/javascripts/polyfills.js'
+  'client/javascripts/index.ts'
 ]
 
 gulp.task('bower', () => {
@@ -35,13 +36,18 @@ gulp.task('less', () => {
     .pipe($.livereload());
 });
 
+const babelifyConfig = { extensions: ['.js','.jsx','.ts','.tsx'] };
 gulp.task('javascript', () => {
   javascriptsFiles.map(function(entry) {
-    return browserify({ entries: [entry] })
-      .transform("babelify", {presets: ["es2015"]})
+    return browserify({ entries: [entry], debug: true })
+      .plugin(tsify)
+      .transform(babelify.configure(babelifyConfig))
       .bundle().on('error', swallowError)
       .pipe($.source(entry))
       .pipe($.buffer())
+      .pipe($.rename(path => {
+        path.extname = '.js';
+       }))
       .pipe($.sourcemaps.init({ loadMaps: true }))
       .pipe($.sourcemaps.write('./'))
       .pipe($.flatten())
@@ -59,7 +65,7 @@ gulp.task('jade', () => {
 gulp.task('watch', ['less', 'javascript'], () => {
   $.livereload.listen();
   gulp.watch('client/less/**/*.less', ['less']);
-  gulp.watch('client/javascripts/**/*.js', ['javascript']);
+  gulp.watch('client/javascripts/**/*.ts', ['javascript']);
   gulp.watch('views/*.jade', ['jade']);
 });
 
