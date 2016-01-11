@@ -1,121 +1,87 @@
 extends layout
 
 block content
-  .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
-    .android-header.mdl-layout__header.mdl-layout__header--waterfall
-      .mdl-layout__header-row
-        span.android-title.mdl-layout-title
-          h3 ENFO'S TEAM
-        // Add spacer, to align navigation to the right in desktop
-        .android-header-spacer.mdl-layout-spacer
-        .android-search-box.mdl-textfield.mdl-js-textfield.mdl-textfield--expandable.mdl-textfield--floating-label.mdl-textfield--align-right.mdl-textfield--full-width
-          label.mdl-button.mdl-js-button.mdl-button--icon(for='search-field')
-            i.material-icons search
-          .mdl-textfield__expandable-holder
-            input#search-field.mdl-textfield__input(type='text')
-        // Navigation
-        .android-navigation-container
-          nav.android-navigation.mdl-navigation
-            a.mdl-navigation__link.mdl-typography--text-uppercase(href='') Héros
-            a.mdl-navigation__link.mdl-typography--text-uppercase(href='') Plateau
-        span.android-mobile-title.mdl-layout-title
-          h3 ENFO'S TEAM
-        button#more-button.android-more-button.mdl-button.mdl-js-button.mdl-button--icon.mdl-js-ripple-effect
-          i.material-icons more_vert
-        ul.mdl-menu.mdl-js-menu.mdl-menu--bottom-right.mdl-js-ripple-effect(for='more-button')
-          li.mdl-menu__item 5.0 Lollipop
-          li.mdl-menu__item 4.4 KitKat
-          li.mdl-menu__item(disabled='') 4.3 Jelly Bean
-          li.mdl-menu__item Android History
-    .android-drawer.mdl-layout__drawer
-      span.mdl-layout-title
-        h3 ENFO'S TEAM
-      nav.mdl-navigation
-        a.mdl-navigation__link.mdl-typography--text-uppercase(href='') Héros
-        a.mdl-navigation__link.mdl-typography--text-uppercase(href='') Plateau
-        .android-drawer-separator
-    .android-content.mdl-layout__content
-      a(name='top')
-      .android-be-together-section.mdl-typography--text-center
-        .logo-font.android-slogan Des héros tous différents
-        .logo-font.android-sub-slogan assassins, guerriers et mages
-        .logo-font.android-create-character
-        a(href='#heroes')
-          button.android-fab.mdl-button.mdl-button--colored.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect
-            i.material-icons expand_more
-      .android-screen-section.mdl-typography--text-center
-        a(name='heroes', id="heroes")
-        .mdl-typography--display-1-color-contrast Les héros
-      .heroes-section
-        #slideshowHeroes.slideshow
-          img(src="https://placeholdit.imgix.net/~text?txtsize=33&txt=1&w=200&h=300")
-          img(src="https://placeholdit.imgix.net/~text?txtsize=33&txt=2&w=200&h=300")
-          img(src="https://placeholdit.imgix.net/~text?txtsize=33&txt=3&w=200&h=300")
-          img(src="https://placeholdit.imgix.net/~text?txtsize=33&txt=4&w=200&h=300")
-      .android-customized-section
-        .android-customized-section-text
-          .mdl-typography--font-light.mdl-typography--display-1-color-contrast Customised by you, for you
-          p.mdl-typography--font-light
-            | Put the stuff that you care about right on your home screen: the latest news, the weather or a stream of your recent photos.
-            br
-            a.android-link.mdl-typography--font-light(href='') Customise your phone
-        .android-customized-section-image
-      .android-more-section
-        .android-section-title.mdl-typography--display-1-color-contrast L'équipe
-        .android-card-container.mdl-grid.mdl-center
-          .mdl-cell.mdl-cell--3-col.mdl-cell--4-col-tablet.mdl-cell--4-col-phone.mdl-card.mdl-shadow--3dp
-            .mdl-card__media
-              img(src='images/more-from-2.png')
-            .mdl-card__title
-              h4.mdl-card__title-text Get a clean customisable home screen
-            .mdl-card__supporting-text
-              span.mdl-typography--font-light.mdl-typography--subhead
-                | A clean, simple, customisable home screen that comes with the power of Google Now: Traffic alerts, weather and much more, just a swipe away.
-            .mdl-card__actions
-              a.android-link.mdl-button.mdl-js-button.mdl-typography--text-uppercase(href='')
-                | Download now
-                i.material-icons chevron_right
-          .mdl-cell.mdl-cell--3-col.mdl-cell--4-col-tablet.mdl-cell--4-col-phone.mdl-card.mdl-shadow--3dp
-            .mdl-card__media
-              img(src='images/more-from-3.png')
-            .mdl-card__title
-              h4.mdl-card__title-text Millions to choose from
-            .mdl-card__supporting-text
-              span.mdl-typography--font-light.mdl-typography--subhead
-                | Hail a taxi, find a recipe, run through a temple – Google Play has all the apps and games that let you make your Android device uniquely yours.
-            .mdl-card__actions
-              a.android-link.mdl-button.mdl-js-button.mdl-typography--text-uppercase(href='')
-                | Find apps
-                i.material-icons chevron_right
-      footer.android-footer.mdl-mega-footer
-        .mdl-mega-footer--top-section
-          .mdl-mega-footer--right-section
-            a.mdl-typography--font-light(href='#top')
-              | Back to Top
-              i.material-icons expand_less
-        .mdl-mega-footer--middle-section
-          p.mdl-typography--font-light Satellite imagery: © 2014 Astrium, DigitalGlobe
-          p.mdl-typography--font-light Some features and devices may not be available in all areas
-        .mdl-mega-footer--bottom-section
-          a#version-dropdown.android-link.android-link-menu.mdl-typography--font-light
-            | Versions
-            i.material-icons arrow_drop_up
-          ul.mdl-menu.mdl-js-menu.mdl-menu--top-left.mdl-js-ripple-effect(for='version-dropdown')
-            li.mdl-menu__item 5.0 Lollipop
-            li.mdl-menu__item 4.4 KitKat
-            li.mdl-menu__item 4.3 Jelly Bean
-            li.mdl-menu__item Android History
-          a#developers-dropdown.android-link.android-link-menu.mdl-typography--font-light
-            | For Developers
-            i.material-icons arrow_drop_up
-          ul.mdl-menu.mdl-js-menu.mdl-menu--top-left.mdl-js-ripple-effect(for='developers-dropdown')
-            li.mdl-menu__item App developer resources
-            li.mdl-menu__item Android Open Source Project
-            li.mdl-menu__item Android SDK
-            li.mdl-menu__item Android for Work
-          a.android-link.mdl-typography--font-light(href='') Blog
-          a.android-link.mdl-typography--font-light(href='') Privacy Policy
-  a#view-source.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-color--accent.mdl-color-text--accent-contrast(href='https://github.com/google/material-design-lite/blob/master/templates/android-dot-com/', target='_blank') View Source
-  
+  .enfos-be-together-section.mdl-typography--text-center
+    .logo-font.enfos-slogan Le jeu de plateau
+    .logo-font.enfos-create-character
+    a( id="heroes-link")
+      button.enfos-fab.mdl-button.mdl-button--colored.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect
+        i.material-icons expand_more
+  .mdl-grid.mdl-center.heroes
+    .heros-class.mdl-cell.mdl-cell--4-col.mdl-center
+      .heros-title Guerriers
+      .heros-description Hachez, coupez, faites rempart pour aider vos compagnons
+    .heros-class.mdl-cell.mdl-cell--4-col
+      .heros-title Mages
+      .heros-description Lancez de puissant sort pour tuer des monstres ou entraver vos adversaires
+    .heros-class.mdl-cell.mdl-cell--4-col
+      .heros-title Assassins
+      .heros-description Roi des coups de putes 
+  .heroes-section
+    a(id='heroes')
+    .demo1.bss-slides 
+      figure
+        img(src="http://lorempixel.com/984/300/cats/1", width="100%")
+        figcaption Djo le crado
+      figure
+        img(src="http://lorempixel.com/984/300/cats/2", width="100%")
+        figcaption Remy le zarbi
+      figure
+        img(src="http://lorempixel.com/984/300/cats/3", width="100%")
+        figcaption Seb le ???
+      figure
+        img(src="http://lorempixel.com/984/300/cats/4", width="100%")
+        figcaption Joël la tourterelle
+      figure
+        img(src="http://lorempixel.com/984/300/cats/5", width="100%")
+        figcaption Tonio le pti gros
+  .enfos-customized-section
+    .enfos-customized-section-text
+      .mdl-typography--font-light.mdl-typography--display-1-color-contrast Et survivez !
+      p.mdl-typography--font-light
+        | Résistez aux vagues de monstres
+        br
+        | Pourrissez l'équipe ennemie
+    .enfos-customized-section-image
+    
+  .enfos-more-section
+    .enfos-section-title.mdl-typography--display-1-color-contrast L'équipe
+    .enfos-card-container.mdl-grid.mdl-center
+      .mdl-cell.mdl-cell--3-offset-desktop.mdl-cell--3-col.mdl-cell--4-col-tablet.mdl-cell--4-col-phone.mdl-card.mdl-shadow--3dp
+        .mdl-card__media
+          img(src='images/more-from-2.png')
+        .mdl-card__title
+          h4.mdl-card__title-text Règles 
+        .mdl-card__supporting-text
+          span.mdl-typography--font-light.mdl-typography--subhead
+            | A clean, simple, customisable home screen that comes with the power of Google Now: Traffic alerts, weather and much more, just a swipe away.
+        .mdl-card__actions
+      .mdl-cell.mdl-cell--3-offset-desktop.mdl-cell--3-col.mdl-cell--4-col-tablet.mdl-cell--4-col-phone.mdl-card.mdl-shadow--3dp
+        .mdl-card__media
+          img(src='images/more-from-2.png')
+        .mdl-card__title
+          h4.mdl-card__title-text Héros
+        .mdl-card__supporting-text
+          span.mdl-typography--font-light.mdl-typography--subhead
+            | A clean, simple, customisable home screen that comes with the power of Google Now: Traffic alerts, weather and much more, just a swipe away.
+        .mdl-card__actions
+      .mdl-cell.mdl-cell--3-offset-desktop.mdl-cell--3-col.mdl-cell--4-col-tablet.mdl-cell--4-col-phone.mdl-card.mdl-shadow--3dp
+        .mdl-card__media
+          img(src='images/more-from-2.png')
+        .mdl-card__title
+          h4.mdl-card__title-text Equipe
+        .mdl-card__supporting-text
+          span.mdl-typography--font-light.mdl-typography--subhead
+            | A clean, simple, customisable home screen that comes with the power of Google Now: Traffic alerts, weather and much more, just a swipe away.
+        .mdl-card__actions
+      .mdl-cell.mdl-cell--3-col.mdl-cell--4-col-tablet.mdl-cell--4-col-phone.mdl-card.mdl-shadow--3dp
+        .mdl-card__media
+          img(src='images/help.jpg', height='200px')
+        .mdl-card__title
+          h4.mdl-card__title-text Nous aider
+        .mdl-card__supporting-text
+          span.mdl-typography--font-light.mdl-typography--subhead
+            | Hail a taxi, find a recipe, run through a temple – Google Play has all the apps and games that let you make your enfos device uniquely yours.
+        .mdl-card__actions
 block script
   script(src="/javascripts/index.js")

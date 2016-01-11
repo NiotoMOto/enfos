@@ -7,6 +7,7 @@ $.source = require('vinyl-source-stream');
 $.buffer = require('vinyl-buffer');
 const tsify = require('tsify');
 const babelify = require('babelify');
+const tsconfig = require('./tsconfig.json');
 
 function swallowError () {
   var args = Array.prototype.slice.call(arguments);
@@ -19,7 +20,8 @@ function swallowError () {
 }
 
 const javascriptsFiles = [
-  'client/javascripts/index.ts'
+  'client/javascripts/index.ts',
+  'client/javascripts/common.ts'
 ]
 
 gulp.task('bower', () => {
@@ -36,12 +38,10 @@ gulp.task('less', () => {
     .pipe($.livereload());
 });
 
-const babelifyConfig = { extensions: ['.js','.jsx','.ts','.tsx'] };
 gulp.task('javascript', () => {
   javascriptsFiles.map(function(entry) {
     return browserify({ entries: [entry], debug: true })
       .plugin(tsify)
-      .transform(babelify.configure(babelifyConfig))
       .bundle().on('error', swallowError)
       .pipe($.source(entry))
       .pipe($.buffer())
@@ -65,6 +65,7 @@ gulp.task('jade', () => {
 gulp.task('watch', ['less', 'javascript'], () => {
   $.livereload.listen();
   gulp.watch('client/less/**/*.less', ['less']);
+  gulp.watch('bower.json', ['bower']);
   gulp.watch('client/javascripts/**/*.ts', ['javascript']);
   gulp.watch('views/*.jade', ['jade']);
 });

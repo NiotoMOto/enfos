@@ -1,4 +1,4 @@
 import Slideshow from './slideshow/Slideshow';
 
 
-const slideshow = new Slideshow('slideshowHeroes');
+const slideshow = new Slideshow('.demo1');

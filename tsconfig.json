@@ -1,23 +1,21 @@
 {
-  "filesGlob": "client/**/*.ts",
-  "compilerOptions": {},
-  "files": [
-    "client/javascripts/index.ts",
-    "client/javascripts/polyfills.ts",
-    "client/javascripts/slideshow/SlideImage.ts",
-    "client/javascripts/slideshow/Slideshow.ts",
-    "node_modules/typescript/lib/lib.core.d.ts",
-    "node_modules/typescript/lib/lib.core.es6.d.ts",
-    "node_modules/typescript/lib/lib.d.ts",
-    "node_modules/typescript/lib/lib.dom.d.ts",
-    "node_modules/typescript/lib/lib.es6.d.ts",
-    "node_modules/typescript/lib/lib.scriptHost.d.ts",
-    "node_modules/typescript/lib/lib.webworker.d.ts",
-    "node_modules/typescript/lib/typescript.d.ts",
-    "node_modules/typescript/lib/typescriptServices.d.ts",
-    "public/javascripts/polyfills.ts"
+  "filesGlob": [
+    "./**/*.ts",
+    "!./node_modules/**/*.ts"
   ],
+  "compileOnSave": false,
+  "compilerOptions": {},
   "atom": {
     "rewriteTsconfig": true
-  }
+  },
+  "files": [
+    "./client/javascripts/common.ts",
+    "./client/javascripts/helpers.ts",
+    "./client/javascripts/index.ts",
+    "./client/javascripts/slideshow/SlideImage.ts",
+    "./client/javascripts/slideshow/Slideshow.ts",
+    "./client/javascripts/smoothScroll/smoothScroll.ts",
+    "./typings/hammerjs/hammerjs.d.ts",
+    "./typings/tsd.d.ts"
+  ]
 }

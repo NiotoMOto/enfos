@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  .mdl-card.mdl-shadow--6dp
+    .mdl-card__title
+      h2.mdl-card__title-text Acme Co.
+    .mdl-card__supporting-text
+      form(action='#')
+        .mdl-textfield.mdl-js-textfield
+          input#username.mdl-textfield__input(type='text')
+          label.mdl-textfield__label(for='username') Username
+        .mdl-textfield.mdl-js-textfield
+          input#userpass.mdl-textfield__input(type='password')
+          label.mdl-textfield__label(for='userpass') Password
+    .mdl-card__actions.mdl-card--border
+      button.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Log in
+
+    
