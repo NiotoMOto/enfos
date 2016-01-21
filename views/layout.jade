@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang="fr")
   head
     title= title
     
@@ -8,6 +8,7 @@ html
     link(rel='stylesheet', href='../bower_components/material-design-lite/material.min.css')
     // endbower
     link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(name="viewport", content="width=device-width, user-scalable=sno")
   body
     .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
       .enfos-header.mdl-layout__header.mdl-layout__header--waterfall
@@ -41,8 +42,8 @@ html
         span.mdl-layout-title
           h3 ENFO'S TEAM
         nav.mdl-navigation
-          a.mdl-navigation__link.mdl-typography--text-uppercase(href='') Héros
-          a.mdl-navigation__link.mdl-typography--text-uppercase(href='') Plateau
+          a.mdl-navigation__link.mdl-typography--text-uppercase(href='/heros') Héros
+          a.mdl-navigation__link.mdl-typography--text-uppercase(href='plateaux') Plateau
           a.mdl-navigation__link.mdl-typography--text-uppercase(href='') Règles
           .enfos-drawer-separator
       .enfos-content.mdl-layout__content
@@ -56,22 +57,6 @@ html
           .mdl-mega-footer--middle-section
             p.mdl-typography--font-light Enfo's team © 2016
           .mdl-mega-footer--bottom-section
-            a#version-dropdown.enfos-link.enfos-link-menu.mdl-typography--font-light
-              | Versions
-              i.material-icons arrow_drop_up
-            ul.mdl-menu.mdl-js-menu.mdl-menu--top-left.mdl-js-ripple-effect(for='version-dropdown')
-              li.mdl-menu__item 5.0 Lollipop
-              li.mdl-menu__item 4.4 KitKat
-              li.mdl-menu__item 4.3 Jelly Bean
-              li.mdl-menu__item enfos History
-            a#developers-dropdown.enfos-link.enfos-link-menu.mdl-typography--font-light
-              | For Developers
-              i.material-icons arrow_drop_up
-            ul.mdl-menu.mdl-js-menu.mdl-menu--top-left.mdl-js-ripple-effect(for='developers-dropdown')
-              li.mdl-menu__item App developer resources
-              li.mdl-menu__item enfos Open Source Project
-              li.mdl-menu__item enfos SDK
-              li.mdl-menu__item enfos for Work
             a.enfos-link.mdl-typography--font-light(href='') Blog
             a.enfos-link.mdl-typography--font-light(href='') Privacy Policy
     // bower:js

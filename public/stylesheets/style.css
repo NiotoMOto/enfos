@@ -1,4 +1,16 @@
 
+.demo-card-image.mdl-card {
+  background: url('/images/help.jpg') center / cover;
+}
+.demo-card-image > .mdl-card__actions {
+  background: rgba(0, 0, 0, 0.2);
+}
+.demo-card-image__filename {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
 body {
   margin: 0;
   background-color: #2A2A2A;

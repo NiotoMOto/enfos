@@ -55,7 +55,7 @@ class SmoothScroll {
      window.scrollBy(0, step);
      console.log( this.iterr);
      this.tm = window.setTimeout(() => {
-        this.anim(id);
+        // this.anim(id);
      }, this.iterr);
    }
    if (scrVal === tOff) {
